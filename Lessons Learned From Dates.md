@@ -1,7 +1,7 @@
 # Lessons Learned From Dates
 
 ///This blog describes my lessons learned from becoming my team's date and time
-///subject matter expert and how you can avoid making the same mistakes I did. 
+///subject matter expert and how you can avoid making the same mistakes I did.
 
 I have been in the field of software engineering for just under three years at this point and in that time I have become my team's dates expert. I have dealt with and tackled many problems regarding dates and how they were implemented in the first place. I would like to share some of the lessons I've learned with you so you don't have to go through the same pain that I did. None of this is new advice, but it is more condensed than other sources I've seen.
 
