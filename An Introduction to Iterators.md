@@ -4,7 +4,7 @@
 If you're not already aware, an iterator is the design pattern that powers your language's flavor of non-index-based for loop. Some examples from common languages would be:
 
 ```python
-# python
+# Python
 list = [0, 1, 2]
 for item in list:
 	# 0, 1, 2,
