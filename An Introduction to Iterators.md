@@ -4,6 +4,7 @@
 If you're not already aware, an iterator is the design pattern that powers your language's flavor of non-index-based for loop. Some examples from common languages would be:
 
 ```python
+# python
 list = [0, 1, 2]
 for item in list:
 	# 0, 1, 2,
@@ -11,6 +12,7 @@ for item in list:
 ```
 
 ```C#
+// C#
 int[] list = {0, 1, 2};
 foreach(int item in list) {
 	// 0, 1, 2,
@@ -19,6 +21,7 @@ foreach(int item in list) {
 ```
 
 ```Java
+// Java
 int[] list = new int[] {0, 1, 2};
 for(int item : list) {
 	// 0, 1, 2,
@@ -27,6 +30,7 @@ for(int item : list) {
 ```
 
 ```rust
+// Rust
 let list = [0, 1, 2];
 for item in list {
 	println!("{}, ", item);
@@ -55,7 +59,7 @@ Every language specifies the interface of an iterator a little bit differently, 
 
 2. Once it sends the signal that there are no more elements, calling the **next()** method again is outside of the iterator specification and is allowed to do anything. This behavior is _not defined_, so functions built to work with all iterators should never call **next()** again.
 
-We could then use this iterator as follows. I'm going to use the rust definition of iterators, but it should be relatively easy to translate to your preferred language.
+We could then use this iterator as follows. I'm going to use the Rust definition of iterators, but it should be relatively easy to translate to your preferred language.
 
 ```rust
 let array = [0, 1, 2];
@@ -99,7 +103,7 @@ println!("{:?}", third); // None. This is the rust equivalent of null. This indi
 let fifth = iterator.next(); // None in our implementation.
 ```
 
-You may have already figured this out, but the for-loops discussed above are really just syntactic sugar around a while loop that uses the iterator APIs. Revisiting our original example, we can restructure this code into the lower-level while loop like the compiler will during the build process (this is called desugaring). If you know Rust, you'll know that this code isn't "the rust way," but it's closer to what you'd see in other languages.
+You may have already figured this out, but the for-loops discussed above are really just syntactic sugar around a while loop that uses the iterator APIs. Revisiting our original example, we can restructure this code into the lower-level while loop like the compiler will during the build process (this is called desugaring). If you know Rust, you'll know that this code isn't "the Rust way," but it's closer to what you'd see in other languages.
 
 ```rust
 // high level for loop
