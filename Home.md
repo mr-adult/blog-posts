@@ -29,8 +29,9 @@ Recruited to design and build systems for analyzing data trends over time. Healt
 - Integrated the new date-based capabilities with existing analytics features to provide a better user experience.
 - Created a visually appealing UI to allow colorful graphing of these date trends using bar and line graphs as well as table views.
 
-**Library Development**
-[tree-iterators-rs](https://crates.io/crates/tree_iterators_rs) built a high performance open-source library that has been downloaded and used in 185 projects (as of 10/23/2023) using the Rust programming language. 
+**Open Source Library Development**
+[tree-iterators-rs](https://crates.io/crates/tree_iterators_rs) built a high performance open-source library that has been downloaded and used by 200 other developers (as of 10/28/2023) using the Rust programming language. 
+
 #### Education
 _**(2020)**_ University of Washington, Seattle, WA
 Bachelor of Science in Mechanical Engineering
