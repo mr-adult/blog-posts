@@ -1,3 +1,5 @@
+///A deeper dive into the iterator design pattern and how it is effectively leveraged and built on top of to create powerful libraries.
+
 In my previous post, I went over an introduction to the iterator design pattern. If you haven't read that yet, you can find it [here](https://adamfortune.com/blog/AnIntroductiontoIterators).
 
 Today I would like to dive deeper into how libraries are able to effectively leverage the consistent interface of iterators. I'll start by discussing the System.Linq library in C# (this is very similar to the std::iter crate in Rust). Afterwards, I will discuss the [Rayon](https://crates.io/crates/rayon) crate (which is very similar to C#'s [Parallel.ForEach](https://learn.microsoft.com/en-us/dotnet/standard/parallel-programming/how-to-write-a-simple-parallel-foreach-loop)) and how it is able to effectively task-share across multiple threads using iterators.
@@ -127,9 +129,10 @@ fn main() {
 ```
 
 This is, of course, going to be very slow. With iterators we can effectively parallelize fairly trivially. We just need to:
-1. put our iterator behind a Mutex or some other kind of lock,
-2. tell each thread to pull from the iterator each time it finishes creating the previous file, and
-3. join the threads when the iterator is finished.
+1. Put our iterator behind a Mutex or some other kind of lock.
+2. Tell each thread to pull from the iterator each time it finishes creating the previous file.
+3. Make sure that only one thread pulls the terminations value out of the iterator.
+4. Join the threads when the iterator is finished.
 
 ```rust
 use std::thread;
