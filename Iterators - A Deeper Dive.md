@@ -1,5 +1,5 @@
 # Iterators - A Deeper Dive
-///A deeper dive into the iterator design pattern and how it is effectively leveraged and built on top of to create powerful libraries.
+///2023-10-28 A deeper dive into the iterator design pattern and how it is effectively leveraged and built on top of to create powerful libraries.
 
 In my previous post, I went over an introduction to the iterator design pattern. If you haven't read that yet, you can find it [here](https://adamfortune.com/blog/AnIntroductiontoIterators).
 
