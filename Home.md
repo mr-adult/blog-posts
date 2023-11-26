@@ -1,6 +1,6 @@
 ## Adam Fortune
-### [adamfortune.com](https://adamfortune.com)
-### github: [https://github.com/mr-adult](https://github.com/mr-adult)
+[adamfortune.com](https://adamfortune.com)
+[github](https://github.com/mr-adult)
 
 ### Full Stack Developer
 Full stack developer with 3 years of experience building analytics solutions for the healthcare industry. Experienced in building RESTful APIs and web-based applications.
