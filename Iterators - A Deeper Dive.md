@@ -9,7 +9,7 @@ Because all iterators provide a consistent interface, we can create additional d
 
 Firstly, we'll create an [extension method](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods) to let us use this function like a method on any and all blanket iterable implementation. This is equivalent to [.Where() in System.Linq](https://learn.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where?view=net-7.0). It will need to take both the source iterable and a predicate function as arguments.
 
-```C#
+```CSharp
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,7 +26,7 @@ public static class IterableExtensions
 
 We can then implement the iterable as follows. It's mostly just boilerplate to be able to give multiple iterators out at the same time:
 
-```C#
+```CSharp
 public class FilterEnumerable<T> : IEnumerable<T> 
 {
 	IEnumerable<T> Source;
@@ -48,7 +48,7 @@ public class FilterEnumerable<T> : IEnumerable<T>
 
 And finally, we can implement the iterator.
 
-```C#
+```CSharp
 public class FilterEnumerator<T> : IEnumerator<T> 
 {
 	IEnumerator<T> Source;
@@ -92,7 +92,7 @@ public class FilterEnumerator<T> : IEnumerator<T>
 
 With all the pieces in place, we can actually use our new functionality in some for loops.
 
-```C#
+```CSharp
 public class Program
 {
 	public static void Main()

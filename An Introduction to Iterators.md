@@ -20,7 +20,7 @@ for(int item : list) {
 }
 ```
 
-```C#
+```CSharp
 // C#
 int[] list = {0, 1, 2};
 foreach(int item in list) {
@@ -232,7 +232,7 @@ In most languages, the actual for loop implementation relies on an iterable, not
 ## Lazy Iteration
 One detail that we glossed over is that iterators use a mechanism called _lazy iteration_. This means they don't do any extra work than what they have to to get you the next value. This allows the for loops to take advantage of short-circuiting logic to exit loops and skip any unnecessary computations. This is also how _continue_ and _break_ keywords are powered, but it also has some caveats. In languages that do not have strict ownership rules like Rust (and even in Rust sometimes), you might get some weird behaviors. Let's take a simple example from C#:
 
-```C#
+```CSharp
 int[] list = {0, 1};
 bool result = false;
 IEnumerable<int> derived = list.Select(value => {
@@ -251,7 +251,7 @@ Console.WriteLine(result);
 
 Huh? What just happened? The answer is that lazy iteration got us! The .Select() method uses _deferred iteration_. Basically, it doesn't actually call it's closure until the **next()** (or MoveNext() in C#) method is called. We've introduced a side effect into our iterator using that closure. Every time our _derived_ iterable creates an iterator and that iterator has its **next()** method called, we end up flipping the value of result from true to false or false to true. This can cause some very sly bugs to creep into your code. For clarity about what the actual code mechanics are, let's unroll our loops and dissect what is actually happening under the hood.
 
-```C#
+```CSharp
 int[] list = {0, 1};
 bool result = false;
 IEnumerable<int> derived = list.Select(value => {
